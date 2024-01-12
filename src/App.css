@@ -1,0 +1,13 @@
+* {
+  font-family: 'Exo', sans-serif !important;
+  font-optical-sizing: auto !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  z-index: 1;
+}
