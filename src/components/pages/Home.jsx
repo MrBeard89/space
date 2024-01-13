@@ -67,6 +67,7 @@ export const Home = () => {
           alignContent: 'center',
           position: 'relative',
           bottom: '-5rem',
+          cursor: 'pointer',
         }}
       >
         <Typography
