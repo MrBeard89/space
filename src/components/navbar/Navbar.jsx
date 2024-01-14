@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   const navbarWrapper = {
     width: '100vw',
-    zIndex: '3',
+    zIndex: '5',
     display: 'block',
     position: ' fixed',
     top: '0',

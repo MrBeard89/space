@@ -6,18 +6,19 @@ import { Navbar } from './components/navbar/Navbar'
 import { Crew } from './components/pages/Crew'
 import { Destination } from './components/pages/Destination'
 import { Technology } from './components/pages/Technology'
+import { NotFound } from './components/pages/NotFound'
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/home' element={<Home />}></Route>
-          <Route path='/crew' element={<Crew />}></Route>
-          <Route path='/destination' element={<Destination />}></Route>
-          <Route path='/technology' element={<Technology />}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/crew' element={<Crew />} />
+          <Route path='/destination' element={<Destination />} />
+          <Route path='/technology' element={<Technology />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
