@@ -1,8 +1,9 @@
 * {
   font-family: 'Exo', sans-serif !important;
   font-optical-sizing: auto !important;
-  font-weight: 300 !important;
+  font-weight: 300;
   font-style: normal !important;
+  font-size: 15px;
 }
 
 body {
