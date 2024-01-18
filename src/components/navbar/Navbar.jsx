@@ -1,100 +1,47 @@
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Box, List, ListItem, ListItemText } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { SpaceContext } from '../../context/SpaceContext'
+
+import { styles } from './navbar.style'
+import { COLORS } from '../../constants/colors'
+import { SIZES } from '../../constants/sizes'
+
 export const Navbar = () => {
-  const [openBtn, setOpenBtn] = useState(false)
-
-  const handleOpenBtn = () => {
-    setOpenBtn((prev) => !prev)
-  }
-
-  //Styles
-
-  const navbarWrapper = {
-    width: '100vw',
-    zIndex: '5',
-    display: 'block',
-    position: ' fixed',
-    top: '0',
-    mb: '4rem',
-  }
-
-  const navbarContainer = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    p: '1rem',
-    position: 'relative',
-  }
-
+  const { openBtn, handleOpenBtn, setOpenBtn } = useContext(SpaceContext)
   return (
-    <Box className='navbar_wrapper' sx={navbarWrapper}>
-      <Box className='navbar_container' sx={navbarContainer}>
+    //Navbar wrapper
+    <Box sx={styles.navbarWrapper}>
+      {/* Home container */}
+      <Box sx={styles.navbarContainer}>
+        {/* Main icon */}
         <Link to='/home'>
           <img src='../src/assets/shared/logo.svg' alt='logo' />
         </Link>
 
+        {/* Hamburger mobile icon */}
         <Box onClick={handleOpenBtn}>
-          {openBtn == false ? (
-            <MenuIcon
-              sx={{
-                color: '#D0D6F9',
-                fontSize: '2.5rem',
-                zIndex: '4',
-                cursor: 'pointer',
-              }}
-            />
-          ) : (
-            ''
-          )}
+          {openBtn == false ? <MenuIcon sx={styles.hamburger} /> : ''}
         </Box>
 
-        <Box
-          sx={{
-            height: '100vh',
-            width: '254px',
-            position: 'absolute',
-            bgcolor: 'rgba(255,255,255, 0.1)',
-            top: '0',
-            right: openBtn ? '0' : '-17rem',
-            zIndex: '3',
-            transition: 'ease-in-out 0.3s',
-            backdropFilter: 'blur(25px)',
-            display: 'flex',
-            flexDirection: 'column-reverse',
-            alignItems: 'flex-end',
-            justifyContent: 'flex-end',
-          }}
-        >
+        {/* Navlinks container - mobile */}
+        <Box sx={[styles.navlinksMobileContainer, { right: openBtn ? '0' : '-17rem' }]}>
           {/* Links */}
-          <List
-            className='navlink_container'
-            sx={[
-              {
-                listStyle: 'none',
-                color: '#fff',
-                textTransform: 'uppercase',
-                display: 'flex',
-                flexDirection: 'column',
-                mt: '4.5rem',
-              },
-            ]}
-          >
+          <List sx={styles.navlinksMobileContainer.navlinksList}>
             {/* Home */}
             <Link to='/home' style={{ textDecoration: 'none' }} onClick={() => setOpenBtn(false)}>
               <ListItem
                 sx={[
                   {
-                    width: '254px',
-                    height: '3rem',
+                    width: SIZES.navbar_mobile_width,
+                    height: SIZES.navbar_mobile_height,
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
-                    color: '#fff',
+                    color: COLORS.main_white,
                   },
 
                   {
@@ -116,7 +63,7 @@ export const Navbar = () => {
                         height: '3rem',
                         position: 'absolute',
                         right: '0',
-                        bgcolor: 'white',
+                        bgcolor: COLORS.main_white,
                       },
                     },
                   },
@@ -156,12 +103,12 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: '254px',
-                    height: '3rem',
+                    width: SIZES.navbar_mobile_width,
+                    height: SIZES.navbar_mobile_height,
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
-                    color: '#fff',
+                    color: COLORS.main_white,
                   },
 
                   {
@@ -183,7 +130,7 @@ export const Navbar = () => {
                         height: '3rem',
                         position: 'absolute',
                         right: '0',
-                        bgcolor: 'white',
+                        bgcolor: COLORS.main_white,
                       },
                     },
                   },
@@ -219,12 +166,12 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: '254px',
-                    height: '3rem',
+                    width: SIZES.navbar_mobile_width,
+                    height: SIZES.navbar_mobile_height,
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
-                    color: '#fff',
+                    color: COLORS.main_white,
                   },
 
                   {
@@ -246,7 +193,7 @@ export const Navbar = () => {
                         height: '3rem',
                         position: 'absolute',
                         right: '0',
-                        bgcolor: 'white',
+                        bgcolor: COLORS.main_white,
                       },
                     },
                   },
@@ -286,12 +233,12 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: '254px',
-                    height: '3rem',
+                    width: SIZES.navbar_mobile_width,
+                    height: SIZES.navbar_mobile_height,
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
-                    color: '#fff',
+                    color: COLORS.main_white,
                   },
 
                   {
@@ -313,7 +260,7 @@ export const Navbar = () => {
                         height: '3rem',
                         position: 'absolute',
                         right: '0',
-                        bgcolor: 'white',
+                        bgcolor: COLORS.main_white,
                       },
                     },
                   },
@@ -346,7 +293,7 @@ export const Navbar = () => {
           </List>
 
           <CloseIcon
-            sx={{ color: '#D0D6F9', fontSize: '2.5rem', p: '1rem', cursor: 'pointer' }}
+            sx={{ color: `${COLORS.light_blue}`, fontSize: '2.5rem', p: '1rem', cursor: 'pointer' }}
             onClick={() => setOpenBtn(false)}
           />
         </Box>
