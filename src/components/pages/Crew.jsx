@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { SpaceContext } from '../../context/SpaceContext'
 import { Navbar } from '../navbar/Navbar'
 import { Box, List, ListItem, Typography } from '@mui/material'
@@ -18,6 +18,33 @@ export const Crew = () => {
   const CrewVictor = crew[2]
 
   const [crewMember, setCrewMember] = useState('Douglas Hurley')
+  const [crewSetter, setCrewSetter] = useState(0)
+
+  function setter() {
+    if (crewSetter === 0) {
+      setCrewMember('Douglas Hurley')
+    } else if (crewSetter === 1) {
+      setCrewMember('Mark Shuttleworth')
+    } else if (crewSetter === 2) {
+      setCrewMember('Victor Glover')
+    } else if (crewSetter === 3) {
+      setCrewMember('Anousheh Ansari')
+    }
+  }
+
+  useEffect(() => {
+    crewSetter < 4 ? setter() : ''
+    setTimeout(() => {
+      if (crewSetter < 4) {
+        setCrewSetter((prev) => prev + 1)
+        console.log(crewSetter)
+      } else {
+        setCrewSetter(0)
+        console.log('setted')
+        console.log(crewSetter)
+      }
+    }, [8000])
+  }, [crewSetter])
 
   return (
     <>
