@@ -20,7 +20,7 @@ const styles = {
   },
 
   homeTextBox: {
-    width: SIZES.home_text_box_width,
+    width: SIZES.mobile_container_width,
     height: SIZES.home_text_box_height,
     mb: '5rem',
     mt: '8rem',
