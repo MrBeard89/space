@@ -5,6 +5,8 @@ const COLORS = {
   freezed_white: 'rgba(255,255,255, 0.1)',
   explore_btn_hover: 'rgba(0,216,231,0.3)',
   explore_boxshadow: '#767676',
+  horizontal_line: '#383B4B',
+  dot: '#979797',
 }
 
 export { COLORS }

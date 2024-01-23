@@ -1,11 +1,12 @@
-import mobileBackground from '../../assets/destination/background-destination-mobile.jpg'
+import mobileBackground from '../../assets/crew/background-crew-mobile.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
-  destinationWrapper: {
+  crewWrapper: {
     backgroundImage: `url(${mobileBackground})`,
+
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
@@ -18,65 +19,62 @@ const styles = {
     textAlign: 'center',
     position: 'relative',
   },
-  destinationHeader: {
+  crewHeader: {
     mt: '6rem',
     textAlign: 'center',
+    p: '0px',
   },
-  destinationHeaderTitle: {
+  crewHeaderTitle: {
     color: 'white',
     mb: '2rem',
     textTransform: 'uppercase',
     fontWeight: '300',
   },
 
-  destinationHeaderSpan: {
+  crewHeaderSpan: {
     color: 'gray',
     fontSize: SIZES.header_span_text,
     paddingRight: '1rem',
     fontWeight: '500',
   },
-  destinationContainer: {
+  crewContainer: {
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
     width: SIZES.mobile_container_width,
   },
-  destinationList: {
+  crewList: {
     display: 'flex',
-    gap: '0.1rem',
+    gap: '0.8rem',
     justifyContent: 'center',
   },
-  destinationListItem: {
-    textTransform: 'uppercase',
-    letterSpacing: '0.2rem',
-    fontSize: SIZES.small_text_size,
-    padding: '0px',
+  crewListItem: {
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%',
     display: 'flex',
-    justifyContent: 'center',
     position: 'relative',
     cursor: 'pointer',
+    p: '0px',
+    bgcolor: COLORS.dot,
     '&:hover': {
-      color: COLORS.main_white,
-      '&:after': {
-        content: "''",
-        width: '80px',
-        height: '5px',
-        bgcolor: COLORS.main_white,
-        transition: 'ease-in-out 1s',
-        position: 'absolute',
-        bottom: '-0.7rem',
-        zIndex: '3',
-      },
+      bgcolor: COLORS.main_white,
     },
   },
 
-  planetTitle: {
+  crewRole: {
     textTransform: 'uppercase',
     letterSpacing: '0.3rem',
-    mb: '1rem',
+    color: COLORS.dot,
+    fontWeight: '300',
+  },
+  crewName: {
+    textTransform: 'uppercase',
+    letterSpacing: '0.3rem',
+    mb: '2rem',
   },
 
-  planetDescription: {
+  crewDescription: {
     color: COLORS.light_blue,
     lineHeight: '1.4rem',
     fontSize: SIZES.description_text_size,
@@ -87,29 +85,11 @@ const styles = {
     width: SIZES.mobile_container_width,
     backgroundColor: COLORS.horizontal_line,
     border: 'none',
-    marginTop: '1.5rem',
-    marginBottom: '0.5rem',
+    position: 'relative',
+    top: '-0.8rem',
+    marginBottom: '1rem',
   },
-
-  infoBottomContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-  },
-
-  infoContainerDistance: {
-    color: COLORS.light_blue,
-    textTransform: 'uppercase',
-    fontSize: SIZES.small_text_size,
-    letterSpacing: '0.2rem',
-  },
-
-  infoContainerTravel: {
-    color: COLORS.light_blue,
-    textTransform: 'uppercase',
-    fontSize: SIZES.small_text_size,
-    letterSpacing: '0.2rem',
-  },
+  crewImg: { width: '270px', height: '270px' },
 }
 
 export { styles }
