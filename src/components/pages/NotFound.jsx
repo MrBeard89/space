@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { COLORS } from '../../constants/colors'
 
 export const NotFound = () => {
   return (
@@ -8,7 +9,7 @@ export const NotFound = () => {
       <Box
         sx={[
           {
-            bgcolor: '#fff',
+            bgcolor: COLORS.main_white,
             height: '100vh',
             width: '100vw',
             display: 'flex',
@@ -17,7 +18,7 @@ export const NotFound = () => {
             justifyContent: 'center',
             gap: '1rem',
             textAlign: 'center',
-            mt: '-4rem',
+            mt: '-8rem',
           },
         ]}
       >
@@ -27,8 +28,12 @@ export const NotFound = () => {
         >
           404
         </Typography>
-        <Typography variant='h5'>Ooops something went wrong,or the page doesn't exist!</Typography>
-        <Typography variant='h5'>Please go back to main page!</Typography>
+        <Typography variant='h5' sx={{ color: 'black' }}>
+          Ooops something went wrong,or the page doesn't exist!
+        </Typography>
+        <Typography variant='h5' sx={{ color: 'black' }}>
+          Please go back to main page!
+        </Typography>
 
         <Link to='/home'>
           <Box

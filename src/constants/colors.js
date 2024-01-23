@@ -7,6 +7,7 @@ const COLORS = {
   explore_boxshadow: '#767676',
   horizontal_line: '#383B4B',
   dot: '#979797',
+  tech_list_btn: '#0B0D17',
 }
 
 export { COLORS }
