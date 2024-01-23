@@ -49,7 +49,7 @@ export const Destination = () => {
                 : ''
             }
             alt={`image of the ${planet}`}
-            style={{ width: '170px' }}
+            style={{ width: 'clamp(170px, 45vw, 450px)' }}
           />
         </Box>
 

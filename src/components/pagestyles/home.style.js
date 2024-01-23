@@ -1,11 +1,13 @@
 import mobileBackground from '../../assets/home/background-home-mobile.jpg'
+import tabletBackground from '../../assets/home/background-home-tablet.jpg'
+
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   homeWrapper: {
-    backgroundImage: `url(${mobileBackground})`,
+    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
@@ -20,7 +22,7 @@ const styles = {
   },
 
   homeTextBox: {
-    width: SIZES.mobile_container_width,
+    width: { xs: SIZES.mobile_container_width, sm: SIZES.tablet_container_width },
     height: SIZES.home_text_box_height,
     mb: '5rem',
     mt: '8rem',
@@ -38,14 +40,14 @@ const styles = {
       color: COLORS.main_white,
       textTransform: 'uppercase',
       mb: '1rem',
-      fontSize: '80px',
+      fontSize: { xs: '80px', sm: '140px' },
       letterSpacing: '5px',
     },
 
     typographyThird: {
       color: COLORS.light_blue,
       fontSize: '17px',
-      lineHeight: '1.5rem',
+      lineHeight: { xs: '1.5rem', sm: '2rem' },
     },
   },
 

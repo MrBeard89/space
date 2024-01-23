@@ -19,14 +19,18 @@ const styles = {
     position: 'relative',
   },
   destinationHeader: {
-    mt: '6rem',
+    mt: { xs: '6rem', sm: '10rem' },
     textAlign: 'center',
+    position: 'relative',
   },
   destinationHeaderTitle: {
     color: 'white',
     mb: '2rem',
     textTransform: 'uppercase',
     fontWeight: '300',
+    position: { sm: 'absolute' },
+    left: { sm: '-10rem' },
+    top: { sm: '-4rem' },
   },
 
   destinationHeaderSpan: {
@@ -39,7 +43,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-    width: SIZES.mobile_container_width,
+    width: { xs: SIZES.mobile_container_width, sm: SIZES.tablet_container_width },
   },
   destinationList: {
     display: 'flex',
@@ -80,21 +84,23 @@ const styles = {
     color: COLORS.light_blue,
     lineHeight: '1.4rem',
     fontSize: SIZES.description_text_size,
+    mb: { xs: '1.5rem', sm: '3rem' },
   },
 
   line: {
     height: '1px',
-    width: SIZES.mobile_container_width,
+    width: { xs: SIZES.mobile_container_width, sm: SIZES.tablet_container_width },
     backgroundColor: COLORS.horizontal_line,
     border: 'none',
-    marginTop: '1.5rem',
+    mt: '1.5rem',
     marginBottom: '0.5rem',
   },
 
   infoBottomContainer: {
     display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
+    flexDirection: { xs: 'column', sm: 'row' },
+    gap: { xs: '1rem', sm: '2rem' },
+    justifyContent: 'center',
   },
 
   infoContainerDistance: {
