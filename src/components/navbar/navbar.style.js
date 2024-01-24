@@ -5,6 +5,7 @@ const styles = {
   //Mobile
   navbarWrapper: {
     width: '100vw',
+
     zIndex: '5',
     display: 'block',
     position: ' fixed',
@@ -13,6 +14,7 @@ const styles = {
   },
   navbarContainer: {
     display: 'flex',
+    height: { sm: '5rem' },
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -20,27 +22,32 @@ const styles = {
     position: 'relative',
   },
 
-  navlinksMobileContainer: {
-    height: '100vh',
-    width: SIZES.navbar_mobile_width,
-    position: 'absolute',
+  navlinksContainer: {
+    height: { xs: '100vh', sm: '96px' },
+    width: { xs: SIZES.navbar_mobile_width, sm: SIZES.navbar_tablet_width },
+    position: { xs: 'absolute' },
     bgcolor: COLORS.freezed_white,
-    top: '0',
+    top: { xs: '0' },
+    right: { sm: '0' },
     zIndex: '3',
     transition: 'ease-in-out 0.3s',
     backdropFilter: 'blur(25px)',
     display: 'flex',
-    flexDirection: 'column-reverse',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
+    flexDirection: { xs: 'column-reverse', sm: 'row' },
+    alignItems: { xs: 'flex-end', sm: 'center' },
+    justifyContent: { xs: 'flex-end', sm: 'space-between' },
 
     navlinksList: {
       listStyle: 'none',
       color: COLORS.main_white,
       textTransform: 'uppercase',
       display: 'flex',
-      flexDirection: 'column',
-      mt: '4.5rem',
+      flexDirection: { xs: 'column', sm: 'row' },
+      justifyContent: { sm: 'space-between' },
+      alignItems: { sm: 'center' },
+      mt: { xs: '4.5rem', sm: '0rem' },
+      width: { sm: 'auto' },
+      ml: { sm: '-1.5rem' },
     },
   },
 
@@ -49,6 +56,15 @@ const styles = {
     fontSize: '2.5rem',
     zIndex: '4',
     cursor: 'pointer',
+    display: { sm: 'none' },
+  },
+
+  closeIcon: {
+    color: COLORS.light_blue,
+    fontSize: '2.5rem',
+    p: '1rem',
+    cursor: 'pointer',
+    display: { sm: 'none' },
   },
 }
 

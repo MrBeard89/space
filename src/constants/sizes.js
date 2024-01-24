@@ -1,5 +1,6 @@
 const SIZES = {
   navbar_mobile_width: '254px',
+  navbar_tablet_width: '450px',
   navbar_mobile_height: '3rem',
   mobile_container_width: '327px',
   tablet_container_width: '450px',

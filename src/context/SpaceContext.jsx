@@ -6,6 +6,7 @@ export const SpaceContext = createContext({})
 export const SpaceContextProvider = (props) => {
   //Navbar mobile state
   const [openBtn, setOpenBtn] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   //Data states
   const [destinations, setDestinations] = useState(dbData.destinations)
   const [crew, setCrew] = useState(dbData.crew)
@@ -16,7 +17,16 @@ export const SpaceContextProvider = (props) => {
     setOpenBtn((prev) => !prev)
   }
 
-  const contextValue = { openBtn, handleOpenBtn, setOpenBtn, destinations, crew, technology }
+  const contextValue = {
+    openBtn,
+    handleOpenBtn,
+    setOpenBtn,
+    destinations,
+    crew,
+    technology,
+    isMobile,
+    setIsMobile,
+  }
 
   return <SpaceContext.Provider value={contextValue}>{props.children}</SpaceContext.Provider>
 }

@@ -1,27 +1,27 @@
 import mobileBackground from '../../assets/destination/background-destination-mobile.jpg'
+import tabletBackground from '../../assets/destination/background-destination-tablet.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   destinationWrapper: {
-    backgroundImage: `url(${mobileBackground})`,
+    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: { xs: 'flex-start', sm: 'center' },
     alignItems: 'center',
-    gap: '1rem',
+    gap: { xs: '1rem', sm: '4rem' },
     textAlign: 'center',
     position: 'relative',
   },
   destinationHeader: {
     mt: { xs: '6rem', sm: '10rem' },
     textAlign: 'center',
-    position: 'relative',
   },
   destinationHeaderTitle: {
     color: 'white',
@@ -29,8 +29,8 @@ const styles = {
     textTransform: 'uppercase',
     fontWeight: '300',
     position: { sm: 'absolute' },
-    left: { sm: '-10rem' },
-    top: { sm: '-4rem' },
+    left: { sm: '1.5rem' },
+    top: { sm: '7rem' },
   },
 
   destinationHeaderSpan: {

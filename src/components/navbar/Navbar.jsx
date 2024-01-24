@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Box, List, ListItem, ListItemText } from '@mui/material'
+import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ import { COLORS } from '../../constants/colors'
 import { SIZES } from '../../constants/sizes'
 
 export const Navbar = () => {
-  const { openBtn, handleOpenBtn, setOpenBtn } = useContext(SpaceContext)
+  const { openBtn, handleOpenBtn, setOpenBtn, isMobile, setIsMobile } = useContext(SpaceContext)
   return (
     //Navbar wrapper
     <Box sx={styles.navbarWrapper}>
@@ -27,17 +27,17 @@ export const Navbar = () => {
           {openBtn == false ? <MenuIcon sx={styles.hamburger} /> : ''}
         </Box>
 
-        {/* Navlinks container - mobile */}
-        <Box sx={[styles.navlinksMobileContainer, { right: openBtn ? '0' : '-17rem' }]}>
+        {/* Navlinks container */}
+        <Box sx={[styles.navlinksContainer, { right: openBtn ? '0' : '-17rem' }]}>
           {/* Links */}
-          <List sx={styles.navlinksMobileContainer.navlinksList}>
+          <List sx={styles.navlinksContainer.navlinksList}>
             {/* Home */}
             <Link to='/home' style={{ textDecoration: 'none' }} onClick={() => setOpenBtn(false)}>
               <ListItem
                 sx={[
                   {
-                    width: SIZES.navbar_mobile_width,
-                    height: SIZES.navbar_mobile_height,
+                    width: { xs: SIZES.navbar_mobile_width, sm: '100%' },
+                    height: { xs: SIZES.navbar_mobile_height, sm: '20px' },
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
@@ -49,20 +49,22 @@ export const Navbar = () => {
                       cursor: 'pointer',
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '-1.5rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: 'gray',
                       },
                     },
                     '&:active': {
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '-1.5rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: COLORS.main_white,
                       },
                     },
@@ -70,26 +72,29 @@ export const Navbar = () => {
                 ]}
               >
                 <ListItemText sx={{ position: 'relative' }}>
-                  <span
-                    style={{
+                  <Typography
+                    variant='sublime1'
+                    sx={{
                       fontWeight: '500',
                       position: 'relative',
                       left: '1.5rem',
-                      fontSize: '1.3rem',
+                      fontSize: { xs: '1.1rem' },
+                      display: { sm: 'none' },
                     }}
                   >
                     00
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '1.3rem',
+                  </Typography>
+                  <Typography
+                    variant='sublime1'
+                    sx={{
+                      fontSize: { xs: '1.1rem', sm: '0.9rem' },
                       position: 'relative',
                       left: '2.6rem',
                       letterSpacing: '0.1rem',
                     }}
                   >
                     Home
-                  </span>
+                  </Typography>
                 </ListItemText>
               </ListItem>
             </Link>
@@ -103,8 +108,8 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: SIZES.navbar_mobile_width,
-                    height: SIZES.navbar_mobile_height,
+                    width: { xs: SIZES.navbar_mobile_width, sm: '100%' },
+                    height: { xs: SIZES.navbar_mobile_height, sm: '20px' },
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
@@ -116,20 +121,22 @@ export const Navbar = () => {
                       cursor: 'pointer',
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '0.4rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: 'gray',
                       },
                     },
                     '&:active': {
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '0.4rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: COLORS.main_white,
                       },
                     },
@@ -137,26 +144,29 @@ export const Navbar = () => {
                 ]}
               >
                 <ListItemText sx={{ position: 'relative' }}>
-                  <span
-                    style={{
+                  <Typography
+                    variant='sublime1'
+                    sx={{
+                      fontWeight: '500',
                       position: 'relative',
                       left: '1.5rem',
-                      fontWeight: '500',
-                      fontSize: '1.3rem',
+                      fontSize: { xs: '1.1rem' },
+                      display: { sm: 'none' },
                     }}
                   >
                     01
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '1.3rem',
+                  </Typography>
+                  <Typography
+                    variant='sublime1'
+                    sx={{
+                      fontSize: { xs: '1.1rem', sm: '0.9rem' },
                       position: 'relative',
-                      left: '3rem',
+                      left: '2.8rem',
                       letterSpacing: '0.1rem',
                     }}
                   >
                     Destination
-                  </span>
+                  </Typography>
                 </ListItemText>
               </ListItem>
             </Link>
@@ -166,8 +176,8 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: SIZES.navbar_mobile_width,
-                    height: SIZES.navbar_mobile_height,
+                    width: { xs: SIZES.navbar_mobile_width, sm: '100%' },
+                    height: { xs: SIZES.navbar_mobile_height, sm: '20px' },
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
@@ -179,20 +189,22 @@ export const Navbar = () => {
                       cursor: 'pointer',
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '-1.3rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: 'gray',
                       },
                     },
                     '&:active': {
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '-1.3rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: COLORS.main_white,
                       },
                     },
@@ -200,26 +212,29 @@ export const Navbar = () => {
                 ]}
               >
                 <ListItemText sx={{ position: 'relative' }}>
-                  <span
-                    style={{
+                  <Typography
+                    variant='sublime1'
+                    sx={{
                       fontWeight: '500',
                       position: 'relative',
                       left: '1.5rem',
-                      fontSize: '1.3rem',
+                      fontSize: { xs: '1.1rem' },
+                      display: { sm: 'none' },
                     }}
                   >
                     02
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '1.3rem',
+                  </Typography>
+                  <Typography
+                    variant='sublime1'
+                    sx={{
+                      fontSize: { xs: '1.1rem', sm: '0.9rem' },
                       position: 'relative',
                       left: '2.6rem',
                       letterSpacing: '0.1rem',
                     }}
                   >
                     Crew
-                  </span>
+                  </Typography>
                 </ListItemText>
               </ListItem>
             </Link>
@@ -233,8 +248,8 @@ export const Navbar = () => {
               <ListItem
                 sx={[
                   {
-                    width: SIZES.navbar_mobile_width,
-                    height: SIZES.navbar_mobile_height,
+                    width: { xs: SIZES.navbar_mobile_width, sm: '100%' },
+                    height: { xs: SIZES.navbar_mobile_height, sm: '20px' },
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
@@ -246,20 +261,22 @@ export const Navbar = () => {
                       cursor: 'pointer',
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '0.7rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: 'gray',
                       },
                     },
                     '&:active': {
                       '&::after': {
                         content: '""',
-                        width: '5px',
-                        height: '3rem',
+                        width: { xs: '5px', sm: '39px' },
+                        height: { xs: '3rem', sm: '5px' },
                         position: 'absolute',
-                        right: '0',
+                        right: { xs: '0px', sm: '0.7rem' },
+                        top: { sm: '3.4rem' },
                         bgcolor: COLORS.main_white,
                       },
                     },
@@ -267,35 +284,35 @@ export const Navbar = () => {
                 ]}
               >
                 <ListItemText sx={{ position: 'relative' }}>
-                  <span
-                    style={{
+                  <Typography
+                    variant='sublime1'
+                    sx={{
                       fontWeight: '500',
                       position: 'relative',
                       left: '1.5rem',
-                      fontSize: '1.3rem',
+                      fontSize: { xs: '1.1rem' },
+                      display: { sm: 'none' },
                     }}
                   >
                     03
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '1.3rem',
+                  </Typography>
+                  <Typography
+                    variant='sublime1'
+                    sx={{
+                      fontSize: { xs: '1.1rem', sm: '0.9rem' },
                       position: 'relative',
                       left: '2.6rem',
                       letterSpacing: '0.1rem',
                     }}
                   >
                     Technology
-                  </span>
+                  </Typography>
                 </ListItemText>
               </ListItem>
             </Link>
           </List>
 
-          <CloseIcon
-            sx={{ color: `${COLORS.light_blue}`, fontSize: '2.5rem', p: '1rem', cursor: 'pointer' }}
-            onClick={() => setOpenBtn(false)}
-          />
+          <CloseIcon sx={styles.closeIcon} onClick={() => setOpenBtn(false)} />
         </Box>
       </Box>
     </Box>

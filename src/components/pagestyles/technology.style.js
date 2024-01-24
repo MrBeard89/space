@@ -1,18 +1,19 @@
 import mobileBackground from '../../assets/technology/background-technology-mobile.jpg'
+import tabletBackground from '../../assets/technology/background-technology-tablet.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   technologyWrapper: {
-    backgroundImage: `url(${mobileBackground})`,
+    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: { xs: 'flex-start', sm: 'center' },
     alignItems: 'center',
     gap: '1rem',
     textAlign: 'center',
@@ -28,6 +29,9 @@ const styles = {
     mb: '2rem',
     textTransform: 'uppercase',
     fontWeight: '300',
+    position: { sm: 'absolute' },
+    top: { sm: '7rem' },
+    left: { sm: '1.5rem' },
   },
 
   technologyHeaderSpan: {
@@ -40,7 +44,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-    width: SIZES.mobile_container_width,
+    width: { xs: SIZES.mobile_container_width, sm: SIZES.tablet_container_width },
   },
   technologyList: {
     display: 'flex',
@@ -75,11 +79,11 @@ const styles = {
 
   technologyDescription: {
     color: COLORS.light_blue,
-    lineHeight: '1.5rem',
+    lineHeight: { xs: '1.5rem', sm: '2rem' },
     fontSize: SIZES.description_text_size,
   },
 
-  technologyImg: { width: '100vw', height: '170px' },
+  technologyImg: { height: 'clamp(170px, 45vw, 450px)', width: '100vw' },
   terminology: {
     fontSize: '18px',
     fontWeight: '200',

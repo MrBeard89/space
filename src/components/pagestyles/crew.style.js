@@ -1,19 +1,19 @@
 import mobileBackground from '../../assets/crew/background-crew-mobile.jpg'
+import tabletBackground from '../../assets/crew/background-crew-tablet.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   crewWrapper: {
-    backgroundImage: `url(${mobileBackground})`,
-
+    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    flexDirection: { xs: 'column', sm: 'column-reverse' },
+    justifyContent: { xs: 'flex-start' },
     alignItems: 'center',
     gap: '1rem',
     textAlign: 'center',
@@ -29,6 +29,9 @@ const styles = {
     mb: '2rem',
     textTransform: 'uppercase',
     fontWeight: '300',
+    position: { sm: 'absolute' },
+    top: { sm: '7rem' },
+    left: { sm: '1.5rem' },
   },
 
   crewHeaderSpan: {
@@ -39,9 +42,10 @@ const styles = {
   },
   crewContainer: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: { xs: 'column', sm: 'column-reverse' },
     gap: '1rem',
-    width: SIZES.mobile_container_width,
+    width: { xs: SIZES.mobile_container_width, sm: SIZES.tablet_container_width },
+    mt: { sm: '0px' },
   },
   crewList: {
     display: 'flex',
@@ -76,7 +80,7 @@ const styles = {
 
   crewDescription: {
     color: COLORS.light_blue,
-    lineHeight: '1.4rem',
+    lineHeight: { xs: '1.4rem', sm: '2rem' },
     fontSize: SIZES.description_text_size,
   },
 
@@ -89,7 +93,7 @@ const styles = {
     top: '-0.8rem',
     marginBottom: '1rem',
   },
-  crewImg: { width: '270px', height: '270px' },
+  crewImg: { width: 'clamp(170px, 65vw, 550px)', height: 'clamp(170px, 65vw, 550px)' },
 }
 
 export { styles }
