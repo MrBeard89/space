@@ -29,6 +29,17 @@ export const Navbar = () => {
 
         {/* Navlinks container */}
         <Box sx={[styles.navlinksContainer, { right: openBtn ? '0' : '-17rem' }]}>
+          <Box sx={styles.lineContainer}>
+            <hr
+              style={{
+                height: '1px',
+                width: '480px',
+                backgroundColor: COLORS.line,
+                border: 'none',
+                position: 'absolute',
+              }}
+            />
+          </Box>
           {/* Links */}
           <List sx={styles.navlinksContainer.navlinksList}>
             {/* Home */}
@@ -79,7 +90,7 @@ export const Navbar = () => {
                       position: 'relative',
                       left: '1.5rem',
                       fontSize: { xs: '1.1rem' },
-                      display: { sm: 'none' },
+                      display: { sm: 'none', lg: 'inline-block' },
                     }}
                   >
                     00
@@ -151,7 +162,7 @@ export const Navbar = () => {
                       position: 'relative',
                       left: '1.5rem',
                       fontSize: { xs: '1.1rem' },
-                      display: { sm: 'none' },
+                      display: { sm: 'none', lg: 'inline-block' },
                     }}
                   >
                     01
@@ -219,7 +230,7 @@ export const Navbar = () => {
                       position: 'relative',
                       left: '1.5rem',
                       fontSize: { xs: '1.1rem' },
-                      display: { sm: 'none' },
+                      display: { sm: 'none', lg: 'inline-block' },
                     }}
                   >
                     02
@@ -291,7 +302,7 @@ export const Navbar = () => {
                       position: 'relative',
                       left: '1.5rem',
                       fontSize: { xs: '1.1rem' },
-                      display: { sm: 'none' },
+                      display: { sm: 'none', lg: 'inline-block' },
                     }}
                   >
                     03

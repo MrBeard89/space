@@ -1,36 +1,44 @@
 import mobileBackground from '../../assets/destination/background-destination-mobile.jpg'
 import tabletBackground from '../../assets/destination/background-destination-tablet.jpg'
+import desktopBackground from '../../assets/destination/background-destination-desktop.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   destinationWrapper: {
-    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
+    backgroundImage: {
+      xs: `url(${mobileBackground})`,
+      sm: `url(${tabletBackground})`,
+      lg: `url(${desktopBackground})`,
+    },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: { xs: 'flex-start', sm: 'center' },
-    alignItems: 'center',
-    gap: { xs: '1rem', sm: '4rem' },
-    textAlign: 'center',
+    flexDirection: { xs: 'column', lg: 'row' },
+    justifyContent: { xs: 'flex-start', lg: 'center' },
+    alignItems: { xs: 'center', lg: 'space-between' },
+    gap: { xs: '1rem', sm: '4rem', lg: '8rem' },
+    textAlign: { xs: 'center', lg: 'left' },
     position: 'relative',
   },
   destinationHeader: {
-    mt: { xs: '6rem', sm: '10rem' },
-    textAlign: 'center',
+    mt: { xs: '6rem', sm: '10rem', lg: '2rem' },
+    textAlign: { xs: 'center', lg: 'left' },
   },
   destinationHeaderTitle: {
     color: 'white',
-    mb: '2rem',
+    mb: { xs: '2rem' },
+    mt: { lg: '-2rem' },
     textTransform: 'uppercase',
     fontWeight: '300',
-    position: { sm: 'absolute' },
+    position: { sm: 'absolute', lg: 'sticky' },
     left: { sm: '1.5rem' },
     top: { sm: '7rem' },
+    textAlign: { lg: 'center' },
+    fontSize: { lg: '22px' },
   },
 
   destinationHeaderSpan: {
@@ -48,17 +56,18 @@ const styles = {
   destinationList: {
     display: 'flex',
     gap: '0.1rem',
-    justifyContent: 'center',
+    justifyContent: { xs: 'center' },
   },
   destinationListItem: {
     textTransform: 'uppercase',
     letterSpacing: '0.2rem',
-    fontSize: SIZES.small_text_size,
+    fontSize: { xs: SIZES.small_text_size, lg: '18px' },
     padding: '0px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: { xs: 'center', lg: 'flex-start' },
     position: 'relative',
     cursor: 'pointer',
+    mb: { lg: '4rem' },
     '&:hover': {
       color: COLORS.main_white,
       '&:after': {
@@ -82,8 +91,8 @@ const styles = {
 
   planetDescription: {
     color: COLORS.light_blue,
-    lineHeight: '1.4rem',
-    fontSize: SIZES.description_text_size,
+    lineHeight: { xs: '1.4rem', lg: '2rem' },
+    fontSize: { xs: SIZES.description_text_size, lg: '18px' },
     mb: { xs: '1.5rem', sm: '3rem' },
   },
 
@@ -100,7 +109,7 @@ const styles = {
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },
     gap: { xs: '1rem', sm: '2rem' },
-    justifyContent: 'center',
+    justifyContent: { xs: 'center', lg: 'flex-start' },
   },
 
   infoContainerDistance: {

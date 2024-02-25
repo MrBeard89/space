@@ -5,7 +5,6 @@ const styles = {
   //Mobile
   navbarWrapper: {
     width: '100vw',
-
     zIndex: '5',
     display: 'block',
     position: ' fixed',
@@ -24,7 +23,11 @@ const styles = {
 
   navlinksContainer: {
     height: { xs: '100vh', sm: '96px' },
-    width: { xs: SIZES.navbar_mobile_width, sm: SIZES.navbar_tablet_width },
+    width: {
+      xs: SIZES.navbar_mobile_width,
+      sm: SIZES.navbar_tablet_width,
+      lg: SIZES.navbar_desktop_width,
+    },
     position: { xs: 'absolute' },
     bgcolor: COLORS.freezed_white,
     top: { xs: '0' },
@@ -46,8 +49,8 @@ const styles = {
       justifyContent: { sm: 'space-between' },
       alignItems: { sm: 'center' },
       mt: { xs: '4.5rem', sm: '0rem' },
-      width: { sm: 'auto' },
-      ml: { sm: '-1.5rem' },
+      width: { sm: 'auto', lg: '722px' },
+      ml: { sm: '-1.5rem', lg: '1rem' },
     },
   },
 
@@ -65,6 +68,13 @@ const styles = {
     p: '1rem',
     cursor: 'pointer',
     display: { sm: 'none' },
+  },
+  lineContainer: {
+    display: { xs: 'none', sm: 'none', md: 'none', xl: 'flex', lg: 'none' },
+    position: 'fixed',
+    left: '-30rem',
+    top: '2.6rem',
+    zIndex: '4',
   },
 }
 

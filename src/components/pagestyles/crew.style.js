@@ -1,26 +1,31 @@
 import mobileBackground from '../../assets/crew/background-crew-mobile.jpg'
 import tabletBackground from '../../assets/crew/background-crew-tablet.jpg'
+import desktopBackground from '../../assets/crew/background-crew-desktop.jpg'
 import { COLORS } from '../../constants/colors'
 
 import { SIZES } from '../../constants/sizes'
 
 const styles = {
   crewWrapper: {
-    backgroundImage: { xs: `url(${mobileBackground})`, sm: `url(${tabletBackground})` },
+    backgroundImage: {
+      xs: `url(${mobileBackground})`,
+      sm: `url(${tabletBackground})`,
+      lg: `url(${desktopBackground})`,
+    },
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
     display: 'flex',
-    flexDirection: { xs: 'column', sm: 'column-reverse' },
-    justifyContent: { xs: 'flex-start' },
-    alignItems: 'center',
-    gap: '1rem',
-    textAlign: 'center',
+    flexDirection: { xs: 'column', sm: 'column-reverse', lg: 'row-reverse' },
+    justifyContent: { xs: 'flex-start', lg: 'center' },
+    alignItems: { xs: 'center', lg: 'space-between' },
+    gap: { xs: '1rem', lg: '6rem' },
+    textAlign: { xs: 'center', lg: 'left' },
     position: 'relative',
   },
   crewHeader: {
-    mt: '6rem',
+    mt: { xs: '6rem', sm: '2rem' },
     textAlign: 'center',
     p: '0px',
   },
@@ -29,9 +34,11 @@ const styles = {
     mb: '2rem',
     textTransform: 'uppercase',
     fontWeight: '300',
-    position: { sm: 'absolute' },
-    top: { sm: '7rem' },
-    left: { sm: '1.5rem' },
+    position: { sm: 'absolute', lg: 'relative' },
+    top: { sm: '7rem', lg: '-5rem' },
+    left: { sm: '1.5rem', lg: '-36rem' },
+    width: { sm: 'fit-content' },
+    fontSize: { lg: '22px' },
   },
 
   crewHeaderSpan: {
@@ -49,12 +56,13 @@ const styles = {
   },
   crewList: {
     display: 'flex',
-    gap: '0.8rem',
-    justifyContent: 'center',
+    gap: { xs: '0.8rem', lg: '1.2rem' },
+    justifyContent: { xs: 'center', lg: 'flex-start' },
+    mt: { lg: '4rem' },
   },
   crewListItem: {
-    width: '10px',
-    height: '10px',
+    width: { xs: '10px', lg: '15px' },
+    height: { xs: '10px', lg: '15px' },
     borderRadius: '50%',
     display: 'flex',
     position: 'relative',
@@ -76,12 +84,13 @@ const styles = {
     textTransform: 'uppercase',
     letterSpacing: '0.3rem',
     mb: '2rem',
+    fontSize: { lg: '44px' },
   },
 
   crewDescription: {
     color: COLORS.light_blue,
     lineHeight: { xs: '1.4rem', sm: '2rem' },
-    fontSize: SIZES.description_text_size,
+    fontSize: { xs: SIZES.description_text_size, lg: '18px' },
   },
 
   line: {
@@ -93,7 +102,7 @@ const styles = {
     top: '-0.8rem',
     marginBottom: '1rem',
   },
-  crewImg: { width: 'clamp(170px, 65vw, 550px)', height: 'clamp(170px, 65vw, 550px)' },
+  crewImg: { width: 'clamp(170px, 65vw, 420px)', height: 'clamp(170px, 65vw, 450px)' },
 }
 
 export { styles }

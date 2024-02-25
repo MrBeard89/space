@@ -8,6 +8,11 @@ import Launch from '../../assets/technology/image-launch-vehicle-landscape.jpg'
 import Capsule from '../../assets/technology/image-space-capsule-landscape.jpg'
 import Spaceport from '../../assets/technology/image-spaceport-landscape.jpg'
 
+//Desktop portraits
+import Launch_Desktop from '../../assets/technology/image-launch-vehicle-portrait.jpg'
+import Capsule_Desktop from '../../assets/technology/image-space-capsule-portrait.jpg'
+import Spaceport_Desktop from '../../assets/technology/image-spaceport-portrait.jpg'
+
 import { COLORS } from '../../constants/colors'
 
 export const Technology = () => {
@@ -59,21 +64,39 @@ export const Technology = () => {
             <span style={styles.technologyHeaderSpan}>03</span>
             Space launch 101
           </Typography>
-
-          {/* technology image */}
-          <img
-            src={
-              technologyItem === 'Launch vehicle'
-                ? Launch
-                : technologyItem === 'Spaceport'
-                ? Spaceport
-                : technologyItem === 'Space capsule'
-                ? Capsule
-                : ''
-            }
-            alt={`image of the ${technologyItem}`}
-            style={styles.technologyImg}
-          />
+          <Box sx={styles.imgContainer}>
+            {/* technology image */}
+            <img
+              src={
+                technologyItem === 'Launch vehicle'
+                  ? Launch
+                  : technologyItem === 'Spaceport'
+                  ? Spaceport
+                  : technologyItem === 'Space capsule'
+                  ? Capsule
+                  : ''
+              }
+              alt={`image of the ${technologyItem}`}
+              style={styles.technologyImg}
+            />
+          </Box>
+          {/* Desktop technology img */}
+          <Box sx={styles.desktopImgContainer}>
+            {/* technology image */}
+            <img
+              src={
+                technologyItem === 'Launch vehicle'
+                  ? Launch_Desktop
+                  : technologyItem === 'Spaceport'
+                  ? Spaceport_Desktop
+                  : technologyItem === 'Space capsule'
+                  ? Capsule_Desktop
+                  : ''
+              }
+              alt={`image of the ${technologyItem}`}
+              style={styles.desktopTechnologyImg}
+            />
+          </Box>
         </Box>
 
         {/* Dinamic component container */}
