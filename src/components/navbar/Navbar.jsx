@@ -19,7 +19,7 @@ export const Navbar = () => {
       <Box sx={styles.navbarContainer}>
         {/* Main icon */}
         <Link to='/home'>
-          <img src='assets\shared\logo.svg' alt='logo' />
+          <img src='./src/assets/shared/logo.svg' alt='logo' />
         </Link>
 
         {/* Hamburger mobile icon */}
