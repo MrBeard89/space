@@ -12,7 +12,7 @@ import { SpaceContextProvider } from './context/SpaceContext'
 function App() {
   return (
     <SpaceContextProvider>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
