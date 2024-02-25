@@ -1,6 +1,6 @@
 <div align="center">
 <a>
-      <img src="https://res.cloudinary.com/dz209s6jk/image/upload/v1634565177/Challenges/wudjsbv8g93aarlhvbud.jpg" alt="Project Banner" width="300px"/>
+      <img src="https://res.cloudinary.com/dz209s6jk/image/upload/v1634565177/Challenges/wudjsbv8g93aarlhvbud.jpg" alt="Project Banner" width="450px"/>
 </a>
   <h3 align="center">Space tourism Website</h3>
 
