@@ -16,7 +16,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
-    width: '100vw',
+    width: '100%',
     display: 'flex',
     flexDirection: { xs: 'column', lg: 'row' },
     justifyContent: { xs: 'flex-start', lg: 'center' },

@@ -4,7 +4,7 @@ import { SIZES } from '../../constants/sizes'
 const styles = {
   //Mobile
   navbarWrapper: {
-    width: '100vw',
+    width: '100%',
     zIndex: '5',
     display: 'block',
     position: ' fixed',
