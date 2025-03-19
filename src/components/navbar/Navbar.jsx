@@ -18,7 +18,7 @@ export const Navbar = () => {
       {/* Home container */}
       <Box sx={styles.navbarContainer}>
         {/* Main icon */}
-        <Link to='/space-tourism-website/home'>
+        <Link to='/space/home'>
           <img style={{ width: '35px' }} src='./logo.svg' alt='logo' />
         </Link>
 
@@ -44,7 +44,7 @@ export const Navbar = () => {
           <List sx={styles.navlinksContainer.navlinksList}>
             {/* Home */}
             <Link
-              to='/space-tourism-website/home'
+              to='/space/home'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >
@@ -116,7 +116,7 @@ export const Navbar = () => {
 
             {/* Destination */}
             <Link
-              to='/space-tourism-website/destination'
+              to='/space/destination'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >
@@ -188,7 +188,7 @@ export const Navbar = () => {
 
             {/* Crew */}
             <Link
-              to='/space-tourism-website/crew'
+              to='/space/crew'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >
@@ -260,7 +260,7 @@ export const Navbar = () => {
 
             {/* Technology */}
             <Link
-              to='/space-tourism-website/technology'
+              to='/space/technology'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >

@@ -32,7 +32,7 @@ export const Home = () => {
         </Box>
 
         {/* Explore Btn */}
-        <Link to='/space-tourism-website/destination'>
+        <Link to='/space/destination'>
           <Box sx={styles.exploreBtn}>
             {/* Explore Text */}
             <Typography variant='h5' sx={styles.exploreText}>

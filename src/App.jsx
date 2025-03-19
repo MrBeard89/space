@@ -14,12 +14,12 @@ function App() {
     <SpaceContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/space-tourism-website/' element={<Home />} />
-          <Route path='/space-tourism-website/home' element={<Home />} />
-          <Route path='/space-tourism-website/crew' element={<Crew />} />
-          <Route path='/space-tourism-website/destination' element={<Destination />} />
-          <Route path='/space-tourism-website/technology' element={<Technology />} />
-          <Route path='/space-tourism-website/*' element={<NotFound />} />
+          <Route path='/space/' element={<Home />} />
+          <Route path='/space/home' element={<Home />} />
+          <Route path='/space/crew' element={<Crew />} />
+          <Route path='/space/destination' element={<Destination />} />
+          <Route path='/space/technology' element={<Technology />} />
+          <Route path='/space/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </SpaceContextProvider>

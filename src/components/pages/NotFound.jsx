@@ -35,7 +35,7 @@ export const NotFound = () => {
           Please go back to main page!
         </Typography>
 
-        <Link to='/space-tourism-website/home'>
+        <Link to='/space/home'>
           <Box
             sx={[
               {
