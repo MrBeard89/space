@@ -18,8 +18,8 @@ export const Navbar = () => {
       {/* Home container */}
       <Box sx={styles.navbarContainer}>
         {/* Main icon */}
-        <Link to='/home'>
-          <img src='./src/assets/shared/logo.svg' alt='logo' />
+        <Link to='/space/home'>
+          <img style={{ width: '35px' }} src='./logo.svg' alt='logo' />
         </Link>
 
         {/* Hamburger mobile icon */}
@@ -43,7 +43,11 @@ export const Navbar = () => {
           {/* Links */}
           <List sx={styles.navlinksContainer.navlinksList}>
             {/* Home */}
-            <Link to='/home' style={{ textDecoration: 'none' }} onClick={() => setOpenBtn(false)}>
+            <Link
+              to='/space/home'
+              style={{ textDecoration: 'none' }}
+              onClick={() => setOpenBtn(false)}
+            >
               <ListItem
                 sx={[
                   {
@@ -112,7 +116,7 @@ export const Navbar = () => {
 
             {/* Destination */}
             <Link
-              to='/destination'
+              to='/space/destination'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >
@@ -183,7 +187,11 @@ export const Navbar = () => {
             </Link>
 
             {/* Crew */}
-            <Link to='/crew' style={{ textDecoration: 'none' }} onClick={() => setOpenBtn(false)}>
+            <Link
+              to='/space/crew'
+              style={{ textDecoration: 'none' }}
+              onClick={() => setOpenBtn(false)}
+            >
               <ListItem
                 sx={[
                   {
@@ -252,7 +260,7 @@ export const Navbar = () => {
 
             {/* Technology */}
             <Link
-              to='/technology'
+              to='/space/technology'
               style={{ textDecoration: 'none' }}
               onClick={() => setOpenBtn(false)}
             >

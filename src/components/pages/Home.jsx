@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 
-import { Navbar } from '../navbar/Navbar'
 import { Link } from 'react-router-dom'
 import { styles } from '../pagestyles/home.style'
+import { Navbar } from '../navbar/Navbar'
 
 export const Home = () => {
   //Styles
@@ -32,7 +32,7 @@ export const Home = () => {
         </Box>
 
         {/* Explore Btn */}
-        <Link to='/home'>
+        <Link to='/space/destination'>
           <Box sx={styles.exploreBtn}>
             {/* Explore Text */}
             <Typography variant='h5' sx={styles.exploreText}>

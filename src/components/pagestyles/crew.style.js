@@ -15,7 +15,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
-    width: '100vw',
+    width: '100%',
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'column-reverse', lg: 'row-reverse' },
     justifyContent: { xs: 'flex-start', lg: 'center' },
@@ -23,6 +23,7 @@ const styles = {
     gap: { xs: '1rem', lg: '6rem' },
     textAlign: { xs: 'center', lg: 'left' },
     position: 'relative',
+    paddingBottom: '2rem',
   },
   crewHeader: {
     mt: { xs: '6rem', sm: '2rem' },
